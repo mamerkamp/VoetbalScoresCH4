@@ -2,8 +2,6 @@ package controller;
 
 import model.Team;
 import model.Wedstrijd;
-
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 /**
