@@ -14,24 +14,35 @@ public class VoetbalScoresLauncher {
 
     public static void main(String[] args) {
 
-//        Scanner keyboard = new Scanner(System.in);
-//        System.out.print("Wat is de tegenstander?: ");
-//        String naamTegenstander = keyboard.next();
-//        System.out.print("Doelpunten gescoord?: ");
-//        int doelpuntenVoor = keyboard.nextInt();
-//        System.out.print("Doelpunten tegenstander?: ");
-//        int doelpuntenTegen = keyboard.nextInt();
-//
-//        Wedstrijd tweedeWedstrijd = new Wedstrijd(naamTegenstander, doelpuntenVoor, doelpuntenTegen);
-//        tweedeWedstrijd.printUitslag();
-//        tweedeWedstrijd.printWedstrijdPunten();
+        Scanner keyboard = new Scanner(System.in);
 
-        Team twente = new Team("Twente");
-        Team ajax = new Team("Ajax");
-        Wedstrijd wedstrijd = new Wedstrijd(twente, ajax, 5, 6);
-        wedstrijd.printUitslag();
-        System.out.println();
-        wedstrijd.printWedstrijdPunten();
+        Team[] teams = new Team[3];
+        teams[0] = new Team ("Ajax");
+        teams[1] = new Team ("PSV");
+        teams[2] = new Team ("Heerenveen");
+
+        Wedstrijd[] wedstrijden = new Wedstrijd[6];
+        wedstrijden[0] = new Wedstrijd(teams[0], teams[1]);
+        wedstrijden[1] = new Wedstrijd(teams[1], teams[2]);
+        wedstrijden[2] = new Wedstrijd(teams[1], teams[0]);
+        wedstrijden[3] = new Wedstrijd(teams[1], teams[2]);
+        wedstrijden[4] = new Wedstrijd(teams[2], teams[0]);
+        wedstrijden[5] = new Wedstrijd(teams[2], teams[1]);
+
+        for (int i = 0; i < wedstrijden.length; i++) {
+            System.out.printf("Geef de uitslag van de wedstrijd " + wedstrijden[i].getTeamThuis().getTeamNaam() +
+                    " - " + wedstrijden[i].getTeamUit().getTeamNaam() + " de voordoelpunten: ");
+            wedstrijden[i].setVoorDoelpunten(keyboard.nextInt());
+            System.out.printf("Geef de uitslag van de wedstrijd " + wedstrijden[i].getTeamThuis().getTeamNaam() +
+                    " - " + wedstrijden[i].getTeamUit().getTeamNaam() + " de tegendoelpunten: ");
+            wedstrijden[i].setTegenDoelpunten(keyboard.nextInt());
+        }
+
+        for (int i = 0; i < wedstrijden.length; i++) {
+            System.out.println("De uitslag van de wedstrijd " + wedstrijden[i].getTeamThuis().getTeamNaam() + " - " +
+                    wedstrijden[i].getTeamUit().getTeamNaam() + " is geworden " + wedstrijden[i].getVoorDoelpunten() +
+                    "-" + wedstrijden[i].getTegenDoelpunten());
+        }
 
 
 
