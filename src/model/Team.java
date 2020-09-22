@@ -29,9 +29,9 @@ public class Team {
         return totaalVoorDoelpunten - totaalTegenDoelpunten;
     }
 
-    public String printStatusTeam() {
-        return "Het team " + getTeamNaam() + " heeft " + getTotaalWedstrijdPunten() + " wedstrijdpunt(en) en " +
-                "een doelsaldo van " + getDoelSaldo();
+    public void printStatusTeam() {
+        System.out.println("Het team " + getTeamNaam() + " heeft " + totaalWedstrijdPunten + " wedstrijdpunt(en) en " +
+                "een doelsaldo van " + getDoelSaldo());
     }
 
     public String getTeamNaam() {

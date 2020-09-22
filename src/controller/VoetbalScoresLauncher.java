@@ -44,6 +44,17 @@ public class VoetbalScoresLauncher {
                     "-" + wedstrijden[i].getTegenDoelpunten());
         }
 
+        for (int i = 0; i < wedstrijden.length; i++) {
+            wedstrijden[i].printUitslag();
+            wedstrijden[i].setWedstrijdPuntenThuisTeam();
+            wedstrijden[i].setWedstrijdPuntenUitTeam();
+            wedstrijden[i].setTotaalDoelpuntenTeams();
+
+        }
+        for (int i = 0; i < teams.length; i++) {
+            teams[i].printStatusTeam();
+        }
+
 
 
     }
