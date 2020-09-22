@@ -21,8 +21,7 @@ public class Team {
         this(teamNaam, 0, 0, 0);
     }
 
-    public Team(){
-        this("", 0, 0, 0);
+    public Team() {
     }
 
     public int getDoelSaldo() {

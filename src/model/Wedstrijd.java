@@ -23,7 +23,6 @@ public class Wedstrijd {
     }
 
     public Wedstrijd() {
-
     }
 
     public int getWedstrijdPuntenThuisTeam() {
@@ -49,13 +48,11 @@ public class Wedstrijd {
     public void setWedstrijdPuntenThuisTeam(){
         int nieuwPuntenTotaalThuisTeam = teamThuis.getTotaalWedstrijdPunten();
         teamThuis.setTotaalWedstrijdPunten(nieuwPuntenTotaalThuisTeam + this.getWedstrijdPuntenThuisTeam());
-
     }
 
     public void setWedstrijdPuntenUitTeam() {
         int nieuwPuntenTotaalUitTeam = teamUit.getTotaalWedstrijdPunten();
         teamUit.setTotaalWedstrijdPunten(nieuwPuntenTotaalUitTeam + this.getWedstrijdPuntenUitTeam());
-
     }
 
     public void setTotaalDoelpuntenTeams() {
@@ -67,7 +64,6 @@ public class Wedstrijd {
         teamUit.setTotaalTegenDoelpunten(totaaltegenUit + this.voorDoelpunten);
         teamThuis.setTotaalTegenDoelpunten(totaaltegenThuis + this.tegenDoelpunten);
         teamUit.setTotaalVoorDoelpunten(totaalvoorUit + this.tegenDoelpunten);
-
     }
 
     public int bepaaldWedstrijdPunten() {
@@ -88,13 +84,6 @@ public class Wedstrijd {
     public void printWedstrijdPunten() {
         System.out.printf("Dit levert %d wedstrijdpunt(en) op voor %s en %d wedstrijdpunten voor %s",
                 getWedstrijdPuntenThuisTeam(), teamThuis.getTeamNaam(), getWedstrijdPuntenUitTeam(), teamUit.getTeamNaam());
-
-//        if (bepaaldWedstrijdPunten() == 1) {
-//            System.out.printf("Dit levert %d wedstrijdpunt op", bepaaldWedstrijdPunten());
-//
-//        } else {
-//            System.out.printf("Dit levert %d wedstrijdpunten op", bepaaldWedstrijdPunten());
-//        }
     }
 
     public Team getTeamThuis() {
